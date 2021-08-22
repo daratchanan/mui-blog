@@ -1,7 +1,9 @@
 import { alpha, AppBar, Avatar, Badge, InputBase, Toolbar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Search, Mail, Notifications, Cancel } from '@material-ui/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +63,19 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
    const [open, setOpen] = useState(false);
    const classes = useStyles({ open });
+   const theme = useTheme();
+   const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
+   const handleDefaultIcons = () => {
+      if (matches) {
+         setOpen(false)
+      }
+   }
+
+   useEffect(() => {
+      window.addEventListener("resize", handleDefaultIcons)
+      
+   })
    return (
       <AppBar >
          <Toolbar className={classes.toobar}>
