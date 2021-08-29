@@ -77,7 +77,7 @@ const Navbar = () => {
       
    })
    return (
-      <AppBar >
+      <AppBar position="fixed">
          <Toolbar className={classes.toobar}>
             <Typography variant="h6" className={classes.logoLg}>
                Natty Dev
