@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Add from './components/Add';
 import Feed from './components/Feed';
 import Leftbar from './components/Leftbar';
 import Navbar from './components/Navbar';
@@ -31,6 +32,7 @@ const App = () => {
 					<Rightbar />
 				</Grid>
 			</Grid>
+			<Add />
 		</div>
 	)
 };
